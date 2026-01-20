@@ -763,8 +763,8 @@ class ARAM(BasicRAG):
         super().__init__(args)
 
         self.client = client = OpenAI(
-            base_url="https://api.gptsapi.net/v1",
-            api_key="sk-WUE0159f560e702e1bde0f9ea2c3dd935f1b089833f956V1"
+            base_url="",
+            api_key=""
         )
 
         self.prompt = """
@@ -837,7 +837,7 @@ class ARAM(BasicRAG):
         # 问题分解
         print(f'Original question is:{question}')
         completion = self.client.beta.chat.completions.parse(
-            model="gpt-4o-mini-2024-07-18",
+            model="",
             messages=[
                 {"role": "system", "content": self.prompt},
                 {"role": "user", "content": question},
@@ -1033,8 +1033,8 @@ class ARAM_SC(BasicRAG):
         super().__init__(args)
 
         self.client = client = OpenAI(
-            base_url="https://api.gptsapi.net/v1",
-            api_key="sk-xmM274b35dcca1780cbf4a2842fd822a95ef1304b1aJ1PwT"
+            base_url="",
+            api_key=""
         )
 
         self.prompt = """
@@ -1106,7 +1106,7 @@ class ARAM_SC(BasicRAG):
     def inference(self, question, demo, case):
         # 问题分解
         completion = self.client.beta.chat.completions.parse(
-            model="gpt-4o-mini-2024-07-18",
+            model="",
             messages=[
                 {"role": "system", "content": self.prompt},
                 {"role": "user", "content": question},
@@ -1142,7 +1142,7 @@ Modified Question:
             # 修改问题
             if i != 0:
                 e = self.client.beta.chat.completions.parse(
-                    model="gpt-4o-mini-2024-07-18",
+                    model="",
                     messages=[
                         {"role": "system", "content": ""},
                         {"role": "user", "content": modify_quesiton},
@@ -1251,7 +1251,7 @@ Output:
 
 
                 t = self.client.beta.chat.completions.parse(
-                    model="gpt-4o-mini-2024-07-18",
+                    model="",
                     messages=[
                         {"role": "system", "content": "You are an expert in evaluating whether a model has sufficient knowledge of a given topic."},
                         {"role": "user", "content": prompt},
@@ -1368,13 +1368,13 @@ class ARAM_SC_1(BasicRAG):
         # if self.tokenizer.pad_token is None:
         #     self.tokenizer.pad_token = self.tokenizer.eos_token
         self.client = client = OpenAI(
-            base_url="https://api.gptsapi.net/v1",
-            api_key="sk-xmM274b35dcca1780cbf4a2842fd822a95ef1304b1aJ1PwT"
+            base_url="",
+            api_key=""
         )
 
         # self.client = client = OpenAI(
-        #     # base_url="https://api.gptsapi.net/v1",
-        #     api_key="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"
+        #     # base_url="",
+        #     api_key=""
         # )
 
         self.prompt = """
@@ -1471,7 +1471,7 @@ Modified Question:
             # 修改问题
             if i != 0:
                 e = self.client.beta.chat.completions.parse(
-                    model="gpt-4o-mini-2024-07-18",
+                    model="",
                     messages=[
                         {"role": "system", "content": ""},
                         {"role": "user", "content": modify_quesiton},
@@ -1588,7 +1588,7 @@ Output:
                 # print(new_text)
                 # # yes token prob > \theta or no
                 t = self.client.beta.chat.completions.parse(
-                    model="gpt-4o-mini-2024-07-18",
+                    model="",
                     messages=[
                         {"role": "system", "content": "You are an expert in evaluating whether a model has sufficient knowledge of a given topic."},
                         {"role": "user", "content": prompt},
