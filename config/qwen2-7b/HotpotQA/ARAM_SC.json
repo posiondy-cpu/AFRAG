@@ -1,0 +1,19 @@
+{
+    "model_name_or_path": "../models/Qwen2.5-7B-Instruct",
+    "method": "ARAM_SC",
+    "dataset": "hotpotqa",
+    "data_path": "../data/hotpotqa",
+    "fewshot": 6,
+    "sample": 1000,
+    "shuffle": false,
+    "generate_max_length": 100,
+    "output_dir": "../result/qwen2_7b_hotpotqa",
+    "retriever": "BM25",
+    "es_index_name": "wiki",
+    "retrieve_topk": 2,
+    "hallucination_threshold": 0.75,
+    "modify_prob" : 0.2,
+    "alpha": 0.3,
+    "theta": 0.83,
+    "use_counter": true
+}

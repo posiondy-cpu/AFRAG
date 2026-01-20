@@ -1,0 +1,19 @@
+{
+    "model_name_or_path": "../models/meta-llama/Llama-2-13b-chat",
+    "method": "ARAM_SC",
+    "dataset": "2wikimultihopqa",
+    "data_path": "../data/2wikimultihopqa",
+    "fewshot": 6,
+    "sample": 1000,
+    "shuffle": false,
+    "generate_max_length": 64,
+    "output_dir": "../result/llama2_13b_chat_2wikimultihopqa",
+    "retriever": "BM25",
+    "es_index_name": "wiki",
+    "retrieve_topk": 2,
+    "hallucination_threshold": 0.75,
+    "modify_prob" : 0.2,
+    "alpha": 0.3,
+    "theta": 0.85,
+    "use_counter": true
+}
